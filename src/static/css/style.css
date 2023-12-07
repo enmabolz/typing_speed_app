@@ -1,0 +1,40 @@
+body {
+    background-color: #04364A;
+}
+
+.box {
+    color: white;
+    margin: 1%;
+    padding: 1%;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+form {
+    background-color: #176B87;
+    margin: 1% auto;
+    padding: 20px;
+    width: 500px;
+}
+
+
+hr {
+    border: 2px solid white;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    background-color: #64CCC5;
+}
+
+.title, .timer{
+    color: white;
+}
+
+
+
