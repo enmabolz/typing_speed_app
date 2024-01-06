@@ -2,7 +2,9 @@ var startButton = document.getElementById("start-button");
 var finishButton = document.getElementById("finish-button");
 var resetButton = document.getElementById("reset-button");
 var timer = document.getElementById("timer");
+var textToWrite = document.getElementById('text-to-write');
 var areaToWrite = document.getElementById("area-to-write");
+var valueOfCounter = document.getElementById('counter')
 var counter = undefined;
 
 startButton.addEventListener("click", runTimer);
@@ -23,7 +25,8 @@ function runTimer() {
 
 function onFinishButtonClick() {
     clearInterval(counter);
-    areaToWrite.disabled = true;
+    textToWrite.disabled = false;
+    valueOfCounter.value = timer.textContent
 }
 
 function disableButtonAndEnableTextArea(element) {

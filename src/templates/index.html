@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="post text-center">
+    <form method="post" class="text-center">
+        
         <h3 class="text-center title">Calculating the typing speed</h3>
         <hr>
         <div class="box">
@@ -8,18 +9,20 @@
         </div>
         <br>
         
-        <h5 id="timer" class="text-center timer">59</h5> 
+        <p id="timer" class="text-center">59</p> 
+        
+        <input id="counter" type="hidden" name="counter" >
     
         <div class="row">
+            
             <div class="col">
-
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" id="floatingTextarea2Disabled" style="height: 200px" disabled>{{ text }}</textarea>
-                    <label for="floatingTextarea2Disabled">Text to Write:</label>
+                    <textarea name="showed-text" class="form-control" id="text-to-write" style="height: 200px" disabled>{{ text }}</textarea>
+                    <label for="text-to-write">Text to Write:</label>
                 </div>
                 
                 <div class="form-floating">
-                    <textarea  id="area-to-write" class="form-control" placeholder="Write here" id="floatingTextarea2" style="height: 200px" disabled></textarea>
+                    <textarea  name="written-text" id="area-to-write" class="form-control" style="height: 200px" disabled></textarea>
                     <label for="floatingTextarea2">Write the text here</label>
                 </div>
                 
@@ -28,8 +31,8 @@
                     
                     <div class="row">
                         <button id="start-button" class="btn btn-outline-light col" type="button">Start</button> 
-                        <a id="finish-button" href="{{ url_for('finish_and_calulate') }}" class="btn btn-outline-light col" aria-disabled="true">Finish</a>   
-                        <button id="reset-button" class="btn btn-outline-light col" type="submit">Reset</button>  
+                        <button id="finish-button" class="btn btn-outline-light col" type="submit">Finish</button>   
+                        <a id="reset-button" class="btn btn-outline-light col">Reset</a>  
                     </div>
                 </div>
             </div>
