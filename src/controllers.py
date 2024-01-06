@@ -2,9 +2,6 @@ from src import app
 from flask import render_template
 import os
 import random
-from threading import Thread
-import time
-from datetime import datetime, timedelta
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -20,8 +17,10 @@ def home():
     return render_template('index.html', text=text_to_show)
 
 
-
-
+@app.route("/calculate")
+def finish_and_calulate():
+    return "<h1>It works</h1>"
+    
 
 
 

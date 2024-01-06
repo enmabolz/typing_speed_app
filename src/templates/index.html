@@ -28,8 +28,8 @@
                     
                     <div class="row">
                         <button id="start-button" class="btn btn-outline-light col" type="button">Start</button> 
-                        <button id="finish-button" class="btn btn-outline-light col" type="submit">Finish</button>   
-                        <button class="btn btn-outline-light col" type="submit">Reset</button>  
+                        <a id="finish-button" href="{{ url_for('finish_and_calulate') }}" class="btn btn-outline-light col" aria-disabled="true">Finish</a>   
+                        <button id="reset-button" class="btn btn-outline-light col" type="submit">Reset</button>  
                     </div>
                 </div>
             </div>
