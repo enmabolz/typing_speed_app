@@ -11,12 +11,10 @@ def home():
     if request.method == "POST":
         written_text = request.form.get('written-text')
         showed_text = request.form.get('showed-text')  
-        timer = request.form.get('counter')
-        print(timer)
+        timer = int(request.form.get('counter'))
+        info_to_show = get_info_to_show(showed_text, written_text, timer)
         
-        info_to_show = get_info_to_show(showed_text, written_text)
-        
-        return render_template('info_to_show.html', info=info_to_show)
+        return render_template('info_to_show.html', info_to_show=info_to_show)
     else:
         text_to_show = get_start_info()
         
@@ -35,19 +33,18 @@ def get_start_info():
 
 
 
-def get_info_to_show(showed_text, written_text):
+def get_info_to_show(showed_text, written_text, timer, start_time_in_seconds=60):
     quantity_of_accurate_words = get_quantity_of_accurate_words(showed_text, written_text)
+    elapsed_time = start_time_in_seconds - timer
+    typing_speed = (start_time_in_seconds * quantity_of_accurate_words) // elapsed_time
     
-    words = get_words(showed_text)
-    
-    
-    typing_speed = quantity_of_accurate_words 
-    
-    
-    
-    
+    info_to_show = {
+        'quantity_of_accurate_words': quantity_of_accurate_words, 
+        'elapsed_time': elapsed_time,
+        'typing_speed': typing_speed,
+    }
 
-    return {}
+    return info_to_show
     
 def get_quantity_of_accurate_words(showed_text, written_text):
     words_in_showed_text = get_words(showed_text)

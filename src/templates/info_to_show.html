@@ -5,21 +5,21 @@
         <hr>
         <table class="table">
             <tr>
-                <td><b>Quantity of written words:</b></td>
-                <td>30</td>
+                <td><b>Quantity of accurate words:</b></td>
+                <td>{{ info_to_show.get('quantity_of_accurate_words') }}</td>
             </tr>
             <tr>
-                <td><b>Quantity of time elapsed:</b></td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td><b>Quantity of correct words:</b></td>
-                <td>2</td>
+                <td><b>Elapsed time:</b></td>
+                <td>{{ info_to_show.get('elapsed_time') }}</td>
             </tr>
             <tr>
                 <td><b>Typing Speed:</b></td>
-                <td>0</td>
+                <td>{{ info_to_show.get('typing_speed') }} words per minute</td>
             </tr>
         </table>
+
+        <div class="text-center">
+            <a href="{{ url_for('home') }}" class="btn btn-outline-secondary">Return to Home Page</a>
+        </div>
     </div>
 {% endblock %}
